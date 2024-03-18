@@ -1,0 +1,134 @@
+
+
+.modal-content {
+    padding: 20px;
+}
+
+a.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    padding: 0px 5px;
+}
+
+.modal-content .checkbox+p {
+    margin-bottom: 40px;
+}
+
+.modal-content .checkbox+p>.signup {
+    float: left;
+}
+
+.memberterms+.text-left {
+    margin: 0;
+}
+.login button.btn-primary {
+    background: #F47400 none repeat scroll 0 0;
+    border: 1px solid #F47400;
+    height: 39px;
+   
+   
+}
+
+
+.data-item {
+    padding: 20px 20px 10px 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px -3px #333;
+}
+
+.listMainDiv:not(.grid-view) .data-item:hover {
+    background-color: #e7f9ff;
+    box-shadow: 0px 0px 0px 0px #333;
+}
+
+.data-item>.data h4 {
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.data-item>.data h4,
+.data-item>.data p {
+    display: inline-block;
+}
+
+.data-item {
+    position: relative;
+}
+
+.data-item .data:last-child {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.data-item>.data>.btn {
+    margin-bottom: 10px;
+    min-width: 120px;
+    position: absolute;
+    right: 0;
+}
+
+.data-item>.data>.btn:nth-child(2n) {
+    top: 40px;
+}
+
+@media screen and (max-width:768px) {
+    .data-item>.data * {
+        display: block;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .data-item>.data>.btn {
+        display: inline-block;
+    }
+    .data-item .data:last-child {
+        position: inherit;
+        top: auto;
+        right: auto;
+    }
+}
+
+.btn-success {
+    background-color: #F47400;
+    border-color: #F47400;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #F47400;
+    border-color: #F47400;
+    color: #fff;
+}
+.text-white a{
+   color: #fff !important;
+}
+
+.text-white a:hover{
+   color: #fff !important;
+   text-decoration: none;
+}
+.toggle-aside{
+    position: fixed;
+    z-index: 2;
+    color: #fff;
+    padding: 10px 10px;
+    background-color: rgb(48, 58, 82);
+    left: 188px;
+    top: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.nav-collapse.sidebar-closed + .toggle-aside{
+    left: 0;
+    transform: rotate(180deg);
+}
+@media screen and (max-width: 768px){
+    .toggle-aside{
+        display: none
+    }
+}

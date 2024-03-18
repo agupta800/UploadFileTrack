@@ -1,0 +1,34 @@
+﻿@model FileModel
+
+@* <h2>File Tracking Details</h2>
+
+<p>Tracking ID: @Model.TrackingId</p>
+
+<img src="@Model.Image" alt="Uploaded Image" />
+
+<p>First Name: @Model.FirstName</p>
+<p>Last Name: @Model.LastName</p>
+
+@if (Model.IsApproved)
+{
+    <p>Status: Approved</p>
+}
+else
+{
+    <p>Status: Pending Approval</p>
+}
+
+<p>
+    <a asp-action="Index">Back to Index</a>
+</p>
+ *@
+
+<h2>Track File Status</h2>
+
+<form asp-controller="Home" asp-action="GetStatus" method="post">
+    <div class="form-group">
+        <label for="trackingId">Enter Tracking ID:</label>
+        <input type="text" id="trackingId" name="trackingId" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Track Status</button>
+</form>

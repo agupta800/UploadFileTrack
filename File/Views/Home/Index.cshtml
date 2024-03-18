@@ -1,0 +1,54 @@
+﻿@model List<FileModel>
+
+<h2>File List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tracking ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Image</th>
+            <th>Status</th>
+            <th>Action</th>
+            <th>Approve</th>
+            <th>Disapprove</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var file in Model)
+        {
+            <tr>
+                <td>@file.TrackingId</td>
+                <td>@file.FirstName</td>
+                <td>@file.LastName</td>
+                <td><img src="@file.Image" alt="Uploaded Image" style="max-width: 100px;" /></td>
+                <td>
+                    @if (file.IsApproved)
+                    {
+                        <span class="badge badge-success">Approved</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-warning">Pending Approval</span>
+                    }
+                </td>
+                <td>
+                    <a asp-controller="Home" asp-action="Track" asp-route-trackingId="@file.TrackingId">Track</a>
+                </td>
+                <td>
+                    <form asp-controller="Home" asp-action="Approve" method="post">
+                        <input type="hidden" name="id" value="@file.Id" />
+                        <button type="submit" class="btn btn-success">Approve</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-controller="Home" asp-action="Disapprove" method="post">
+                        <input type="hidden" name="id" value="@file.Id" />
+                        <button type="submit" class="btn btn-danger">Disapprove</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
